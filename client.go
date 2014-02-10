@@ -19,3 +19,9 @@ func (ce ClientError) HasError() bool {
 func (ce *ClientError) Error() string {
 	return ce.Message
 }
+
+func NewClientError(message string) *ClientError {
+	ce := new(ClientError)
+	ce.Message = message
+	return ce
+}
